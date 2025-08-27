@@ -35,7 +35,7 @@ flowchart LR
 Optional UIs:
 - Spark Master: http://localhost:8080
 - MinIO Console: http://localhost:9001 (minioadmin / minioadmin)
-- Superset: http://localhost:88 (admin / 1441)
+- Superset: http://localhost:88 (admin / admin)
 
 ## Configuration
 Environment variables (via `.env`):
