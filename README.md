@@ -5,13 +5,13 @@ End-to-end ETL that downloads SpaceX launches, stores raw JSON in MinIO, transfo
 ## Architecture
 ```mermaid
 flowchart LR
-  SpaceXAPI[SpaceX REST API] --> Extract[Airflow Task: extract_to_minio]
+  SpaceXAPI["SpaceX REST API"] --> Extract["Airflow Task: extract_to_minio"]
   Extract --> MinIO[(MinIO S3 Bucket)]
-  MinIO --> Transform[Airflow Task: transform (Spark local[*])]
+  MinIO --> Transform["Airflow Task: transform (Spark local[*])"]
   Transform --> Parquet[/Parquet files/]
-  Parquet --> Load[Airflow Task: load_parquet_to_snowflake]
+  Parquet --> Load["Airflow Task: load_parquet_to_snowflake"]
   Load --> Snowflake[(Snowflake)]
-  Snowflake --> Superset[Superset]
+  Snowflake --> Superset["Superset"]
 
   subgraph Airflow
     Extract
