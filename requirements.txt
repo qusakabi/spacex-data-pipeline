@@ -1,0 +1,6 @@
+psycopg2-binary
+snowflake-connector-python[pandas]
+requests
+pyspark==3.5.1
+boto3
+pyarrow
